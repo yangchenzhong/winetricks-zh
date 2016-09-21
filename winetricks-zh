@@ -15716,7 +15716,7 @@ load_popfs()
 #----------------------------------------------------------------
 
 w_metadata qq apps \
- title="QQ 8.5(Chinese chat app)" \
+ title="QQ 8.6(Chinese chat app)" \
  publisher="Tencent" \
  year="2016" \
  media="download" \
@@ -15783,7 +15783,7 @@ w_metadata qq8 apps \
  homepage="http://www.qq.com" \
  unattended="no"
 
-load_qq()
+load_qq8()
 {
     w_download http://dldir1.qq.com/qqfile/qq/QQ8.6/18804/QQ8.6.exe cc7a92dd27da9d2d4b2215c24007dd45
     w_download http://hillwoodhome.net/wine/QQ.tar.gz 08de45d3e5bb34b22e7c33e1163daec69742db58
