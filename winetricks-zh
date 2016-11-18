@@ -10041,10 +10041,12 @@ load_ie7()
     fi
 
     # Install
-    w_download http://download.microsoft.com/download/3/8/8/38889DC1-848C-4BF2-8335-86C573AD86D9/IE7-WindowsXP-x86-enu.exe d39b89c360fbaa9706b5181ae4718100687a5326
+    # w_download http://download.microsoft.com/download/3/8/8/38889DC1-848C-4BF2-8335-86C573AD86D9/IE7-WindowsXP-x86-enu.exe d39b89c360fbaa9706b5181ae4718100687a5326
+    w_download http://download.microsoft.com/download/4/1/8/418981a4-6ef9-4de6-befc-1a53e886cb62/IE7-WindowsXP-x86-chs.exe 8597784e67390c078efa9b701d254dce53e077d1
+
     cd "$W_CACHE/$W_PACKAGE"
 
-    "$WINE" IE7-WindowsXP-x86-enu.exe $W_UNATTENDED_SLASH_QUIET
+    "$WINE" IE7-WindowsXP-x86-chs.exe $W_UNATTENDED_SLASH_QUIET
 
     # IE7 exits with 194 to signal a reboot
     status=$?
@@ -10140,7 +10142,9 @@ load_ie8()
     mkdir -p "$W_SYSTEM32_DLLS"/catroot/\{f750e6c3-38ee-11d1-85e5-00c04fc295ee\}
     w_try cp -f "$W_CACHE"/ie8/winetest.cat "$W_SYSTEM32_DLLS"/catroot/\{f750e6c3-38ee-11d1-85e5-00c04fc295ee\}/oem0.cat
 
-    w_download http://download.microsoft.com/download/C/C/0/CC0BD555-33DD-411E-936B-73AC6F95AE11/IE8-WindowsXP-x86-ENU.exe e489483e5001f95da04e1ebf3c664173baef3e26
+    # w_download http://download.microsoft.com/download/C/C/0/CC0BD555-33DD-411E-936B-73AC6F95AE11/IE8-WindowsXP-x86-ENU.exe e489483e5001f95da04e1ebf3c664173baef3e26
+    w_download http://download.microsoft.com/download/1/6/1/16174D37-73C1-4F76-A305-902E9D32BAC9/IE8-WindowsXP-x86-CHS.exe 02ec9908dd8c8abc8ad2ac792f0548d729e43e95
+
     if [ $W_UNATTENDED_SLASH_QUIET ]
     then
         quiet="$W_UNATTENDED_SLASH_QUIET /forcerestart"
@@ -10157,7 +10161,7 @@ load_ie8()
     # FIXME: There's an option for /updates-noupdates to disable checking for updates, but that
     # forces the install to fail on Wine. Not sure if it's an IE8 or Wine bug...
     # FIXME: can't check status, as it always reports failure on wine?
-    "$WINE" IE8-WindowsXP-x86-ENU.exe $quiet
+    "$WINE" IE8-WindowsXP-x86-CHS.exe $quiet
     # END KLUDGE: restore z:, assuming user didn't kill us
     mv "$WINEPREFIX/dosdevices/z:.bak_wt" "$WINEPREFIX/dosdevices/z:"
 
